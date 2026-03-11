@@ -24,20 +24,10 @@ body {
   color: var(--text);
 }
 
-/* Hide OS cursor on desktop only */
+/* Hide OS cursor on desktop only (everywhere) */
 @media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
-  }
-
-  a,
-  button,
-  [role="button"],
-  input[type="submit"],
-  input[type="button"],
-  select,
-  summary {
-    cursor: none;
+  * {
+    cursor: none !important;
   }
 }
 

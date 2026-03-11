@@ -55,8 +55,13 @@ export default function CustomCursor() {
     };
 
     const onOver = (e) => setHovering(isClickable(e.target));
-    const onDown = () => el.classList.add("is-visible");
-    const onUp = () => {};
+    const onDown = () => {
+      // Keep cursor visible during clicks/drags
+      el.classList.add("is-visible");
+    };
+    const onUp = () => {
+      el.classList.add("is-visible");
+    };
 
     const tick = () => {
       const { x: tx, y: ty } = targetRef.current;
